@@ -160,13 +160,11 @@ class _BiodataScreenState extends State<BiodataScreen> {
                                       blurRadius: 10,
                                     ),
                                   ],
-                                ),
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.blue.shade100,
-                                  child: Icon(
-                                    Icons.person,
-                                    size: 60,
-                                    color: Colors.blue.shade700,
+                                  image: const DecorationImage(
+                                    image: AssetImage(
+                                      'assets/images/profile.jpg',
+                                    ),
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ),

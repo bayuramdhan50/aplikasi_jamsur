@@ -9,7 +9,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
   late Animation<double> _scaleAnimation;
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    
+
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1500),
@@ -37,7 +38,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => const DashboardScreen(),
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const DashboardScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
@@ -97,9 +99,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       color: Colors.blue,
                     ),
                   ),
-                  
+
                   const SizedBox(height: 40),
-                  
+
                   // App Title
                   const Text(
                     'APLIKASI JAMSUR',
@@ -117,9 +119,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       ],
                     ),
                   ),
-                  
+
                   const SizedBox(height: 10),
-                  
+
                   Text(
                     'Mobile Application',
                     style: TextStyle(
@@ -128,17 +130,16 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       letterSpacing: 1,
                     ),
                   ),
-                  
+
                   const SizedBox(height: 60),
-                  
-                  // Profile Photo Placeholder
+
+                  // Profile Photo
                   Container(
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.white, width: 3),
-                      color: Colors.white,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.2),
@@ -146,22 +147,21 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                           offset: const Offset(0, 8),
                         ),
                       ],
-                    ),
-                    child: const CircleAvatar(
-                      backgroundColor: Colors.blue,
-                      child: Icon(
-                        Icons.person,
-                        size: 50,
-                        color: Colors.white,
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/profile.jpg'),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  
+
                   const SizedBox(height: 25),
-                  
+
                   // Student Info
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 40,
+                      vertical: 20,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.15),
                       borderRadius: BorderRadius.circular(15),
@@ -170,7 +170,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     child: const Column(
                       children: [
                         Text(
-                          'NIM: 123456789',
+                          '152022250',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
@@ -180,7 +180,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                         ),
                         SizedBox(height: 8),
                         Text(
-                          'Nama: [Nama Anda]',
+                          'R Jayani Maulana Sastrawijaya',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
@@ -191,9 +191,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       ],
                     ),
                   ),
-                  
+
                   const SizedBox(height: 60),
-                  
+
                   // Loading Indicator
                   SizedBox(
                     width: 40,
